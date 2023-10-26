@@ -1,0 +1,17 @@
+spring:
+    cloud:
+        gateway:
+            routes:
+                - id: ms-goal-current
+                  uri: https://api.github
+                  predicates:
+                    - Path=/current-goal/{id}
+                - id: ms-goal-month
+                  uri: https://api.github
+                  predicates:
+                    - Path=/month-goal/{id}
+                - id: ms-goal-omni
+                  uri: https://api.github
+                  predicates:
+                    - Path=/omni/{id}
+                
